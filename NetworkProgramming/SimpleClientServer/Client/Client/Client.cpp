@@ -64,13 +64,10 @@ int __cdecl main(int argc, char **argv)
     char *sendbuf = 
 "GET / HTTP/1.1\r\n\
 Host: localhost\r\n\
-Connection : keep - alive\r\n\
-Cache - Control : no - cache\r\n\
-User - Agent : Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36 (KHTML, like Gecko) Chrome / 70.0.3538.67 Safari / 537.36\r\n\
-Postman - Token : 026fb2fd - f52d - 748e - d17a - 5a481b915487\r\n\
+Connection : keep-alive\r\n\
+Cache-Control : no-cache\r\n\
 Accept : */*\r\n\
-Accept-Encoding: gzip, deflate, br\r\n\
-Accept-Language: en-US,en;q=0.9,te;q=0.8,hi;q=0.7\r\n";
+Accept-Encoding: gzip, deflate, br\r\n";
 
     iResult = send(ConnectSocket, sendbuf, (int)strlen(sendbuf), 0);
     if (iResult == SOCKET_ERROR)
