@@ -9,3 +9,9 @@
 *.ilk
 *.pch
 *.ipch
+*.iobj
+*.exp
+*.ipdb
+*.exe
+*.dll
+*.lib
