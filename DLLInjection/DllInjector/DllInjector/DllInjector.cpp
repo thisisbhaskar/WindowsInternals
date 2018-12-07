@@ -42,7 +42,7 @@ void _tmain(int argc, TCHAR *argv[])
     {
         wchar_t* l_dll_path = L"C:\\Users\\bhasker\\Desktop\\Projects\\WindowsInternals\\DLLInjection\\TargetDll\\x64\\Release\\TargetDll.dll";
         size_t l_bytes_total = (wcslen(l_dll_path) * sizeof(wchar_t)) + sizeof(wchar_t);
-        size_t l_bytes_written = 0;
+        SIZE_T l_bytes_written = 0;
         WriteProcessMemory(l_proc_handle, l_alloc_ptr, l_dll_path, l_bytes_total,  &l_bytes_written);
         if (l_bytes_total != l_bytes_written)
         {
@@ -84,14 +84,14 @@ void _tmain(int argc, TCHAR *argv[])
         }
     }
 
+    if (l_alloc_ptr)
+    {
+        VirtualFreeEx(l_proc_handle, l_alloc_ptr, 0, MEM_RELEASE);
+    }
+
     if (l_proc_handle)
     {
         CloseHandle(l_proc_handle);
-    }
-
-    if (l_alloc_ptr)
-    {
-        VirtualFree(l_alloc_ptr, 0, MEM_RELEASE);
     }
 
     if (l_remote_thread)
