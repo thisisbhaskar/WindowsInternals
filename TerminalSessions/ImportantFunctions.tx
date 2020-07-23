@@ -1,0 +1,4 @@
+WTSEnumerateSessions - To enumerate sessions
+WTSQuerySessionInformation - To query information for a given session based on WTS_INFO_CLASS
+WTSQueryUserToken  - To get primary token for a given session ID (Needs TCB privilege)
+WTSEnumerateProcesses - To enumerate processes in the system
