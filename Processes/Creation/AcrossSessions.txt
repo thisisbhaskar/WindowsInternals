@@ -2,3 +2,16 @@
 - Get the session ID where the process must be crated (Use WTS* functions if required) - WTSGetActiveConsoleSessionId to get console session ID
 - Get Session's primary user token with WTSQueryUserToken
 - Use that token to create new process with CreateProcessAsUser
+
+
+
+https://stackoverflow.com/questions/26913172/create-process-in-user-session-from-service
+----------------------------------------------------------------------------------------
+
+When calling WTSQueryUserToken(), you have to make sure your service process has the SE_TCB_NAME privilege enabled. Use AdjustTokenPrivileges() for that.
+
+The session ID returned by WTSGetActiveConsoleSessionId() may not be the correct session that you need to run your spawned process on! It returns the session ID that is attached to the physical console (screen/keyboard/mouse) of the local machine, if any. That session may be displaying the secure WinLogon desktop, meaning no user is actually logged in to the physical machine, so calling WTSQueryUserToken() on that session ID would fail with an ERROR_NO_TOKEN error. A user can log in over a Remote Desktop Connection, for instance, in which case that connection would be running in a different session than the console. If you want your spawned process to run in a session that has a user logged in, you need to use WTSEnumerateSessions() to find a session that is in the WTSActive state. And even then, WTSQueryUserToken() may not return a token depending on how the user is logged in, so you need to call WTSQueryUserToken() on each active session you find until you find one that successfully gives you a token.
+
+When calling DuplicateTokenEx(), use SecurityIdentification instead of SecurityDelegation.
+
+When calling CreateProcessAsUser(), you can call CreateEnvironmentBlock() first to create an environment that is appropriate for that specific user and then pass that pointer to CreateProcessAsUser(). Otherwise, the spawned process will use your service's environment instead. This step is optional, depending on the particular needs of the spawned app.
