@@ -1,0 +1,1 @@
+LsaEnumerateLogonSessions - Enumerate logon sessions
