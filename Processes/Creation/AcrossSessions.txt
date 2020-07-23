@@ -1,4 +1,4 @@
 - Can only be done from account which has TCB privilege (Generally only SYSTEM account has this privilege)
-- Get the session ID where the process must be crated (Use WTS* functions if required)
+- Get the session ID where the process must be crated (Use WTS* functions if required) - WTSGetActiveConsoleSessionId to get console session ID
 - Get Session's primary user token with WTSQueryUserToken
 - Use that token to create new process with CreateProcessAsUser
