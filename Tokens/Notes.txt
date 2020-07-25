@@ -6,7 +6,6 @@ Token from Session
   - WTSQueryUserToken - Needs SeTcbPrivilege)
 Token from Logon Session
   - ??
-  -  
 Token from Process
   - OpenProcessToken
   - GetCurrentProcessToken
