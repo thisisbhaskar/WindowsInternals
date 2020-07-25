@@ -10,8 +10,13 @@ Token from Process
   - OpenProcessToken
   - GetCurrentProcessToken
   
-Process Token vs Thread Token (Impersonation Token)
+Token Types (Primary / Impersonation Token)
 ---------------------------------------------------
+* The token that is assigned to process when it is created is called 'Primary Token'. This token can be retrived with GetProcesToken or GetCurrentProcessToken. The TOKEN_TYPE of the process token will always be TokenPrimary.
+* A primary token can be created from another primary/impersonation token using DuplicateTokenEx
+* In most of the cases, threads does not have tokens of their own. When ever a thread tries to access as secure object, process primary token is used to check the access. If a thread does not have a token of its own, function OpenThreadToken fails with ERROR_NO_TOKEN (1008 - GetLastError).
+However, there is a facility where a thread can have a different token than the process primiary token. ImpersonalLoggedOnUser can be used to assign separte token to the thread. This token is called 'Impersonation Token'. The TOKEN_TYPE for the token returned by OpenThreadToken will be TokenImpersonation.
+* Impersonation Token can be created from another primary/impersonation token using DuplicateToken/DuplicateTokenEx
 
 Token Access Rights
 -------------------
