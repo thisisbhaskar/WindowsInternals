@@ -1,3 +1,11 @@
+Different ways to get Tokens
+----------------------------
+Token creation with LogonUser
+Token from Session
+Token from Logon Session
+Token from Process
+
+There is no way to enumerate all the access tokens in the system
 
 Token Access Rights
 ------------------
