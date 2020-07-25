@@ -18,6 +18,10 @@ Token Types (Primary / Impersonation Token)
 However, there is a facility where a thread can have a different token than the process primiary token. ImpersonalLoggedOnUser can be used to assign separte token to the thread. This token is called 'Impersonation Token'. The TOKEN_TYPE for the token returned by OpenThreadToken will be TokenImpersonation.
 * Impersonation Token can be created from another primary/impersonation token using DuplicateToken/DuplicateTokenEx
 
+Impersonation Levels
+--------------------
+This should not be confused with Impersonation Token
+
 Token Access Rights
 -------------------
 * TOKEN_ADJUST_SESSIONID  - This is required to change session id of token. Generally this is required when we have token from a particlar session 
