@@ -1,0 +1,11 @@
+
+Token Access Rights
+------------------
+* TOKEN_ADJUST_SESSIONID  - This is required to change session id of token. Generally this is required when we have token from a particlar session 
+                            and we want to create a process in different session with that same token. Like starting a SYSTEM process in a user session
+                            from a service. We get service token, duplicate it, change session id and then create a new process with 
+                            CreateProcessAsUser
+                          - Getting this security access right requires SE_TCB_NAME privilege. Generally this privilge is only enabled for SYSTEM 
+                            account. But can be enabled for other users/groups by administrator.
+TOKEN_ASSIGN_PRIMARY      - Requires to attach primary token to a process. i.e. creating a new process with CreateProcessAsUser.                            
+                            

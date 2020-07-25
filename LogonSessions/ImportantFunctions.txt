@@ -1,0 +1,5 @@
+LsaEnumerateLogonSessions - Enumerate logon sessions
+LsaGetLogonSessionData - Get logon sesion data
+LsaLookupSid(s) - 
+LsaLogonUser -
+LsaLookupName(s) -
