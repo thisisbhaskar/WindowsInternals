@@ -1,1 +1,9 @@
-TODO
+SID for system account is : S-1-5-18
+
+It may be represented with following names:
+-------------------------------------------
+  - NT AUTHORITY/SYSTEM
+  - LocalSystem
+  - ./LocalSystem
+  - ComputerName/LocalSystem
+  - SYSTEM
