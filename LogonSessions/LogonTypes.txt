@@ -1,1 +1,18 @@
 SECURITY_LOGON_TYPE represents logon type value.
+
+typedef enum _SECURITY_LOGON_TYPE {
+  UndefinedLogonType,
+  Interactive,
+  Network,
+  Batch,
+  Service,
+  Proxy,
+  Unlock,
+  NetworkCleartext,
+  NewCredentials,
+  RemoteInteractive,
+  CachedInteractive,
+  CachedRemoteInteractive,
+  CachedUnlock
+} SECURITY_LOGON_TYPE, *PSECURITY_LOGON_TYPE;
+
