@@ -1,8 +1,8 @@
 Available hardware
 ------------------
   - Motherboard
-  - CPU
-  - Network cards (both wired and wireless)
+  - CPU / Processor
+  - Network cards MAC (both wired and wireless)
   - Disks and Volumes
   - RAM
   - Monitor (No way can be used)
