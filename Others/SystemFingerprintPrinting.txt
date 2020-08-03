@@ -10,5 +10,4 @@ Available hardware
   - what else???
   
 https://www.codeproject.com/Articles/28678/Generating-Unique-Key-Finger-Print-for-a-Computer
-https://docs.sentinel.gemalto.com/ldk/LDKdocs/SPNL/LDK_SLnP_Guide/A-CloneDetection/CloneDetection_VM.htm
-
+https://docs.sentinel.gemalto.com/ldk/LDKdocs/SPNL/LDK_SLnP_Guide/A-CloneDetection/HowDetects_MachineCloning.htm
