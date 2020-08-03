@@ -11,3 +11,4 @@ Available hardware
   
 https://www.codeproject.com/Articles/28678/Generating-Unique-Key-Finger-Print-for-a-Computer
 https://docs.sentinel.gemalto.com/ldk/LDKdocs/SPNL/LDK_SLnP_Guide/A-CloneDetection/HowDetects_MachineCloning.htm
+https://security.stackexchange.com/questions/129375/cloning-problem-of-vm-license-keys
