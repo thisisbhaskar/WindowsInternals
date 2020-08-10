@@ -1,0 +1,3 @@
+* CreateToolhelp32Snapshot 
+  Heap32ListFirst
+  Heap32ListNext
