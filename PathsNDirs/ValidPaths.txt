@@ -1,0 +1,43 @@
+ 
+File Name
+  Windows :
+    Should not contain /
+    Should not contain \
+  Linux: 
+    Should not contain /
+  Mac :
+    Should not contain /
+Directory:
+  Windows:
+    Should not contain /
+    Should end with \
+    Should start with one of below :
+    X:\ (x is a to z or A to Z) (at least should be 3 characters)
+    \\ and next character should not be \ ( at least should be 4 characters) 
+    If 3rd character is ?, then its should start with \\?\Volume (Optional)
+    Should not contain more than one consecutive \ other than in first position
+  Linux: 
+    Should end with /
+    Should start with /
+    Should not contain more than one consecutive /
+  Mac:
+    Should end with /
+    Should start with /
+    Should not contain more than one consecutive /
+Full Path:             
+  Windows:
+    Should not contain /
+    Should not end with \
+    Should start with one of below :
+    X:\ (x is a to z or A to Z) (at least should be 3 characters)
+    \\ and next character should not be \ ( at least should be 4 characters) 
+    If 3rd character is ?, then its should start with \\?\Volume (Optional)
+    Should not contain more than one consecutive \ other than in first position
+  Linux: 
+    Should not end with /
+    Should start with /
+    Should not contain more than one consecutive /
+  Mac:
+    Should not end with /
+    Should start with /
+    Should not contain more than one consecutive /
