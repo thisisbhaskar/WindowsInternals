@@ -1,5 +1,15 @@
-* CreateToolhelp32Snapshot
+There are three ways to enumerate processes in the system:
+---------------------------------------------------------
+Option1:
+
+  CreateToolhelp32Snapshot
   Process32First 
   Process32Next
-* EnumProcesses
-* WTSEnumerateProcesses
+
+Option2:
+
+  EnumProcesses
+
+Option3:
+
+  WTSEnumerateProcesses
