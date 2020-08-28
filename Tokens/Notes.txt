@@ -1,9 +1,32 @@
+Different ways to get Tokens
+----------------------------
+Token creation with LogonUser
+  - LogonUser, LsaLogonUser
+Token from Session
+  - WTSQueryUserToken - Needs SeTcbPrivilege)
+Token from Logon Session
+  - ??
+Token from Process
+  - OpenProcessToken
+  - GetCurrentProcessToken
+  
+Token Types (Primary / Impersonation Token)
+---------------------------------------------------
+* The token that is assigned to process when it is created is called 'Primary Token'. This token can be retrived with GetProcesToken or GetCurrentProcessToken. The TOKEN_TYPE of the process token will always be TokenPrimary.
+* A primary token can be created from another primary/impersonation token using DuplicateTokenEx
+* In most of the cases, threads does not have tokens of their own. When ever a thread tries to access as secure object, process primary token is used to check the access. If a thread does not have a token of its own, function OpenThreadToken fails with ERROR_NO_TOKEN (1008 - GetLastError).
+However, there is a facility where a thread can have a different token than the process primiary token. ImpersonalLoggedOnUser can be used to assign separte token to the thread. This token is called 'Impersonation Token'. The TOKEN_TYPE for the token returned by OpenThreadToken will be TokenImpersonation.
+* Impersonation Token can be created from another primary/impersonation token using DuplicateToken/DuplicateTokenEx
+
+Impersonation Levels
+--------------------
+This should not be confused with Impersonation Token
 
 Token Access Rights
-------------------
+-------------------
 * TOKEN_ADJUST_SESSIONID  - This is required to change session id of token. Generally this is required when we have token from a particlar session 
-                            and we want to create a process in different session with that same token. Like starting a SYSTEM process in a user session
-                            from a service. We get service token, duplicate it, change session id and then create a new process with 
+                            and we want to create a process in different session with that same token. Like starting a SYSTEM process in a 
+                            user sessionfrom a service. We get service token, duplicate it, change session id and then create a new process with 
                             CreateProcessAsUser
                           - Getting this security access right requires SE_TCB_NAME privilege. Generally this privilge is only enabled for SYSTEM 
                             account. But can be enabled for other users/groups by administrator.
