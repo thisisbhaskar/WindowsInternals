@@ -1,0 +1,12 @@
+Considerations to run service as "Local Service/Network Service" account:
+=========================================================================
+
+* No files should be written to inside Program Files/Windows. Only Admins are allowed to write to files inside Program Files.
+  All application specific data like config/logs/temp files/etc.. must be moved to ProgramData??
+  
+* Cannot create any service or start any drivers in the code. All of this must be moved to installer.
+
+* "Local Service" is not part of "Administrators" group, so it has limited privileges. Hence, cannot perform any operations in the code 
+  that require those specical privileges
+
+* 
