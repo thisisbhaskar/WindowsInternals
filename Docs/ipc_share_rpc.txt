@@ -1,0 +1,4 @@
+* IPC$ share is present to allow access to named pipes on the server
+* Clients can connect to IPC$ with nullsession if guest account is enabled and guest is allowed network logon
+* ACLs are enforced at named pipes layer
+* IPC$ share can be used to list domain users and network shares of the server
