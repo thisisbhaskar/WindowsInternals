@@ -5,10 +5,16 @@
    * Enable guest account : GPEDIT : Security Settings->Local Policies->Security Options->Accounts:Guest account status (Enabled)
    * Enable network logon for guest account :
       GPEDIT : Security Settings->Local Policies->User Rights Assigment->Deny access to this computer from the network (Make sure guest is not there)
+   * Make sure "Do not allow anonymous enumeration of SAM accounts and shares" is "Disabled" (Disabled is default)
+   
    On Client
    ---------
+   Latest versions of windows disallow SMB clients to make guest logon on to the remove servers by default. Enable it on the client system as below:
+   
    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters] "AllowInsecureGuestAuth"=dword:1
    
    
+* Enumerate shares as below
+
    net use \\server\\ipc$
    net view \\server
