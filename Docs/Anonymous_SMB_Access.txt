@@ -1,0 +1,14 @@
+* Shares enumeration with 'Anonymous (Guest) (null session) user'
+ 
+   On Server
+   --------
+   * Enable guest account : GPEDIT : Security Settings->Local Policies->Security Options->Accounts:Guest account status (Enabled)
+   * Enable network logon for guest account :
+      GPEDIT : Security Settings->Local Policies->User Rights Assigment->Deny access to this computer from the network (Make sure guest is not there)
+   On Client
+   ---------
+   [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters] "AllowInsecureGuestAuth"=dword:1
+   
+   
+   net use \\server\\ipc$
+   net view \\server
