@@ -1,6 +1,6 @@
 
-SE_CREATE_TOKEN_NAME ("SeCreateTokenPrivilege")
-===============================================
+1. SE_CREATE_TOKEN_NAME                              TEXT("SeCreateTokenPrivilege")
+================================================================================
 
 Required to create token with NtCreateToken/ZwCreateToken
 
@@ -9,16 +9,16 @@ https://www.microsoftpressstore.com/articles/article.aspx?p=2228450&seqNum=5
 https://stackoverflow.com/questions/47412590/create-a-user-token-from-sid-expand-environment-variables-in-user-context
 http://www.verycomputer.com/5_12f80d645183c6ab_1.htm
 
-SE_ASSIGNPRIMARYTOKEN_NAME ("SeAssignPrimaryTokenPrivilege")
-============================================================
+2. SE_ASSIGNPRIMARYTOKEN_NAME                        TEXT("SeAssignPrimaryTokenPrivilege")
+================================================================================
 
 Required to create a process with different token than the parent process which is generally done with CreateProcessAsUser.
 Required to call CreateProcessAsUser.
 
 https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/replace-a-process-level-token
 
-SE_LOCK_MEMORY_NAME ("SeLockMemoryPrivilege")
-=============================================
+3. SE_LOCK_MEMORY_NAME                              TEXT("SeLockMemoryPrivilege")
+================================================================================
 
 https://devblogs.microsoft.com/oldnewthing/20071106-00/?p=24573
 
@@ -30,53 +30,113 @@ https://docs.microsoft.com/en-us/windows/win32/memory/address-windowing-extensio
 
 https://stackoverflow.com/questions/2568236/how-to-keep-windows-from-paging-block-of-memory
 
-SE_INCREASE_QUOTA_NAME ("SeIncreaseQuotaPrivilege")
-===================================================
+4. SE_INCREASE_QUOTA_NAME                         TEXT("SeIncreaseQuotaPrivilege")
+================================================================================
+
+Required to increase process memory quota. What does it mean and how to do it is not clear.
+
+The only API that i could find needing this privilege is CreateProcessAsUser (along with SeAssignPrimaryTokenPrivilege).
 
 https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/adjust-memory-quotas-for-a-process
 https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera
 
-SE_UNSOLICITED_INPUT_NAME                    TEXT("SeUnsolicitedInputPrivilege")
-SE_MACHINE_ACCOUNT_NAME                      TEXT("SeMachineAccountPrivilege")
-SE_TCB_NAME                                  TEXT("SeTcbPrivilege")
-SE_SECURITY_NAME                             TEXT("SeSecurityPrivilege")
-SE_TAKE_OWNERSHIP_NAME                       TEXT("SeTakeOwnershipPrivilege")
-SE_LOAD_DRIVER_NAME                          TEXT("SeLoadDriverPrivilege")
-SE_SYSTEM_PROFILE_NAME                       TEXT("SeSystemProfilePrivilege")
-SE_SYSTEMTIME_NAME                           TEXT("SeSystemtimePrivilege")
-SE_PROF_SINGLE_PROCESS_NAME                  TEXT("SeProfileSingleProcessPrivilege")
-SE_INC_BASE_PRIORITY_NAME                    TEXT("SeIncreaseBasePriorityPrivilege")
-SE_CREATE_PAGEFILE_NAME                      TEXT("SeCreatePagefilePrivilege")
-SE_CREATE_PERMANENT_NAME                     TEXT("SeCreatePermanentPrivilege")
-SE_BACKUP_NAME                               TEXT("SeBackupPrivilege")
-SE_RESTORE_NAME                              TEXT("SeRestorePrivilege")
-SE_SHUTDOWN_NAME                             TEXT("SeShutdownPrivilege")
-SE_DEBUG_NAME                                TEXT("SeDebugPrivilege")
-SE_AUDIT_NAME                                TEXT("SeAuditPrivilege")
-SE_SYSTEM_ENVIRONMENT_NAME                   TEXT("SeSystemEnvironmentPrivilege")
-SE_CHANGE_NOTIFY_NAME                        TEXT("SeChangeNotifyPrivilege")
-SE_REMOTE_SHUTDOWN_NAME                      TEXT("SeRemoteShutdownPrivilege")
-SE_UNDOCK_NAME                               TEXT("SeUndockPrivilege")
-SE_SYNC_AGENT_NAME                           TEXT("SeSyncAgentPrivilege")
-SE_ENABLE_DELEGATION_NAME                    TEXT("SeEnableDelegationPrivilege")
-SE_MANAGE_VOLUME_NAME                        TEXT("SeManageVolumePrivilege")
+5. SE_UNSOLICITED_INPUT_NAME                    TEXT("SeUnsolicitedInputPrivilege")
+================================================================================
 
-SE_IMPERSONATE_NAME ("SeImpersonatePrivilege")
-==============================================
+6. SE_MACHINE_ACCOUNT_NAME                      TEXT("SeMachineAccountPrivilege")
+================================================================================
+
+7. SE_TCB_NAME                                  TEXT("SeTcbPrivilege")
+================================================================================
+
+8. SE_SECURITY_NAME                             TEXT("SeSecurityPrivilege")
+================================================================================
+
+9. SE_TAKE_OWNERSHIP_NAME                       TEXT("SeTakeOwnershipPrivilege")
+================================================================================
+
+10. SE_LOAD_DRIVER_NAME                          TEXT("SeLoadDriverPrivilege")
+================================================================================
+
+11. SE_SYSTEM_PROFILE_NAME                       TEXT("SeSystemProfilePrivilege")
+================================================================================
+
+12. SE_SYSTEMTIME_NAME                           TEXT("SeSystemtimePrivilege")
+================================================================================
+
+13. SE_PROF_SINGLE_PROCESS_NAME                  TEXT("SeProfileSingleProcessPrivilege")
+================================================================================
+
+14. SE_INC_BASE_PRIORITY_NAME                    TEXT("SeIncreaseBasePriorityPrivilege")
+================================================================================
+
+15. SE_CREATE_PAGEFILE_NAME                      TEXT("SeCreatePagefilePrivilege")
+================================================================================
+
+16. SE_CREATE_PERMANENT_NAME                     TEXT("SeCreatePermanentPrivilege")
+================================================================================
+
+17. SE_BACKUP_NAME                               TEXT("SeBackupPrivilege")
+================================================================================
+
+18. SE_RESTORE_NAME                              TEXT("SeRestorePrivilege")
+================================================================================
+
+19. SE_SHUTDOWN_NAME                             TEXT("SeShutdownPrivilege")
+================================================================================
+
+20. SE_DEBUG_NAME                                TEXT("SeDebugPrivilege")
+================================================================================
+
+21. SE_AUDIT_NAME                                TEXT("SeAuditPrivilege")
+================================================================================
+
+22. SE_SYSTEM_ENVIRONMENT_NAME                   TEXT("SeSystemEnvironmentPrivilege")
+================================================================================
+
+23. SE_CHANGE_NOTIFY_NAME                        TEXT("SeChangeNotifyPrivilege")
+================================================================================
+
+24. SE_REMOTE_SHUTDOWN_NAME                      TEXT("SeRemoteShutdownPrivilege")
+================================================================================
+
+25. SE_UNDOCK_NAME                               TEXT("SeUndockPrivilege")
+================================================================================
+
+26. SE_SYNC_AGENT_NAME                           TEXT("SeSyncAgentPrivilege")
+================================================================================
+
+27. SE_ENABLE_DELEGATION_NAME                    TEXT("SeEnableDelegationPrivilege")
+================================================================================
+
+28. SE_MANAGE_VOLUME_NAME                        TEXT("SeManageVolumePrivilege")
+================================================================================
+
+29. SE_IMPERSONATE_NAME                          TEXT("SeImpersonatePrivilege")
+================================================================================
 
 https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createprocesswithtokenw
 
-SE_CREATE_GLOBAL_NAME                        TEXT("SeCreateGlobalPrivilege")
-SE_TRUSTED_CREDMAN_ACCESS_NAME               TEXT("SeTrustedCredManAccessPrivilege")
-SE_RELABEL_NAME                              TEXT("SeRelabelPrivilege")
+30. SE_CREATE_GLOBAL_NAME                        TEXT("SeCreateGlobalPrivilege")
+================================================================================
 
-SE_INC_WORKING_SET_NAME ("SeIncreaseWorkingSetPrivilege")
-=========================================================
+31. SE_TRUSTED_CREDMAN_ACCESS_NAME               TEXT("SeTrustedCredManAccessPrivilege")
+================================================================================
+
+32. SE_RELABEL_NAME                              TEXT("SeRelabelPrivilege")
+================================================================================
+
+33. SE_INC_WORKING_SET_NAME                      TEXT("SeIncreaseWorkingSetPrivilege")
+================================================================================
 
 Required to increase working set of processes (SetProcessWorkingSetSize)
 https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessworkingsetsize
 
+34. SE_TIME_ZONE_NAME                            TEXT("SeTimeZonePrivilege")
+================================================================================
 
-SE_TIME_ZONE_NAME                            TEXT("SeTimeZonePrivilege")
-SE_CREATE_SYMBOLIC_LINK_NAME                 TEXT("SeCreateSymbolicLinkPrivilege")
-SE_DELEGATE_SESSION_USER_IMPERSONATE_NAME    TEXT("SeDelegateSessionUserImpersonatePrivilege")
+35. SE_CREATE_SYMBOLIC_LINK_NAME                 TEXT("SeCreateSymbolicLinkPrivilege")
+================================================================================
+
+36. SE_DELEGATE_SESSION_USER_IMPERSONATE_NAME    TEXT("SeDelegateSessionUserImpersonatePrivilege")
+================================================================================
