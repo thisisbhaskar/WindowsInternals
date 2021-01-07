@@ -1,4 +1,22 @@
 
+SE_CREATE_TOKEN_NAME ("SeCreateTokenPrivilege")
+===============================================
+
+Required to create token with NtCreateToken/ZwCreateToken
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment
+https://www.microsoftpressstore.com/articles/article.aspx?p=2228450&seqNum=5
+https://stackoverflow.com/questions/47412590/create-a-user-token-from-sid-expand-environment-variables-in-user-context
+http://www.verycomputer.com/5_12f80d645183c6ab_1.htm
+
+SE_ASSIGNPRIMARYTOKEN_NAME ("SeAssignPrimaryTokenPrivilege")
+============================================================
+
+Required to create a process with different token than the parent process which is generally done with CreateProcessAsUser.
+Required to call CreateProcessAsUser.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/replace-a-process-level-token
+
 SE_LOCK_MEMORY_NAME ("SeLockMemoryPrivilege")
 =============================================
 
@@ -9,3 +27,5 @@ https://docs.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtua
 
 This privilege is required to call AWE (Address Windowing Extensions) functions 
 https://docs.microsoft.com/en-us/windows/win32/memory/address-windowing-extensions
+
+https://stackoverflow.com/questions/2568236/how-to-keep-windows-from-paging-block-of-memory
