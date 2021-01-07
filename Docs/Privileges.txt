@@ -34,6 +34,7 @@ SE_INCREASE_QUOTA_NAME ("SeIncreaseQuotaPrivilege")
 ===================================================
 
 https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/adjust-memory-quotas-for-a-process
+https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera
 
 SE_UNSOLICITED_INPUT_NAME                    TEXT("SeUnsolicitedInputPrivilege")
 SE_MACHINE_ACCOUNT_NAME                      TEXT("SeMachineAccountPrivilege")
