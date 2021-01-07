@@ -29,3 +29,53 @@ This privilege is required to call AWE (Address Windowing Extensions) functions
 https://docs.microsoft.com/en-us/windows/win32/memory/address-windowing-extensions
 
 https://stackoverflow.com/questions/2568236/how-to-keep-windows-from-paging-block-of-memory
+
+SE_INCREASE_QUOTA_NAME ("SeIncreaseQuotaPrivilege")
+===================================================
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/adjust-memory-quotas-for-a-process
+
+SE_UNSOLICITED_INPUT_NAME                    TEXT("SeUnsolicitedInputPrivilege")
+SE_MACHINE_ACCOUNT_NAME                      TEXT("SeMachineAccountPrivilege")
+SE_TCB_NAME                                  TEXT("SeTcbPrivilege")
+SE_SECURITY_NAME                             TEXT("SeSecurityPrivilege")
+SE_TAKE_OWNERSHIP_NAME                       TEXT("SeTakeOwnershipPrivilege")
+SE_LOAD_DRIVER_NAME                          TEXT("SeLoadDriverPrivilege")
+SE_SYSTEM_PROFILE_NAME                       TEXT("SeSystemProfilePrivilege")
+SE_SYSTEMTIME_NAME                           TEXT("SeSystemtimePrivilege")
+SE_PROF_SINGLE_PROCESS_NAME                  TEXT("SeProfileSingleProcessPrivilege")
+SE_INC_BASE_PRIORITY_NAME                    TEXT("SeIncreaseBasePriorityPrivilege")
+SE_CREATE_PAGEFILE_NAME                      TEXT("SeCreatePagefilePrivilege")
+SE_CREATE_PERMANENT_NAME                     TEXT("SeCreatePermanentPrivilege")
+SE_BACKUP_NAME                               TEXT("SeBackupPrivilege")
+SE_RESTORE_NAME                              TEXT("SeRestorePrivilege")
+SE_SHUTDOWN_NAME                             TEXT("SeShutdownPrivilege")
+SE_DEBUG_NAME                                TEXT("SeDebugPrivilege")
+SE_AUDIT_NAME                                TEXT("SeAuditPrivilege")
+SE_SYSTEM_ENVIRONMENT_NAME                   TEXT("SeSystemEnvironmentPrivilege")
+SE_CHANGE_NOTIFY_NAME                        TEXT("SeChangeNotifyPrivilege")
+SE_REMOTE_SHUTDOWN_NAME                      TEXT("SeRemoteShutdownPrivilege")
+SE_UNDOCK_NAME                               TEXT("SeUndockPrivilege")
+SE_SYNC_AGENT_NAME                           TEXT("SeSyncAgentPrivilege")
+SE_ENABLE_DELEGATION_NAME                    TEXT("SeEnableDelegationPrivilege")
+SE_MANAGE_VOLUME_NAME                        TEXT("SeManageVolumePrivilege")
+
+SE_IMPERSONATE_NAME ("SeImpersonatePrivilege")
+==============================================
+
+https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createprocesswithtokenw
+
+SE_CREATE_GLOBAL_NAME                        TEXT("SeCreateGlobalPrivilege")
+SE_TRUSTED_CREDMAN_ACCESS_NAME               TEXT("SeTrustedCredManAccessPrivilege")
+SE_RELABEL_NAME                              TEXT("SeRelabelPrivilege")
+
+SE_INC_WORKING_SET_NAME ("SeIncreaseWorkingSetPrivilege")
+=========================================================
+
+Required to increase working set of processes (SetProcessWorkingSetSize)
+https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessworkingsetsize
+
+
+SE_TIME_ZONE_NAME                            TEXT("SeTimeZonePrivilege")
+SE_CREATE_SYMBOLIC_LINK_NAME                 TEXT("SeCreateSymbolicLinkPrivilege")
+SE_DELEGATE_SESSION_USER_IMPERSONATE_NAME    TEXT("SeDelegateSessionUserImpersonatePrivilege")
