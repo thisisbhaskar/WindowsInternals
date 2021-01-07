@@ -1,0 +1,11 @@
+
+SE_LOCK_MEMORY_NAME ("SeLockMemoryPrivilege")
+=============================================
+
+https://devblogs.microsoft.com/oldnewthing/20071106-00/?p=24573
+
+Looks like VirtualLock does not need this privilege.
+https://docs.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtuallock
+
+This privilege is required to call AWE (Address Windowing Extensions) functions 
+https://docs.microsoft.com/en-us/windows/win32/memory/address-windowing-extensions
