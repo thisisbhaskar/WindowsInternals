@@ -58,6 +58,8 @@ From MSDN:
 "Restrict the Adjust memory quotas for a process user right to only users who require the ability to adjust memory quotas to perform their jobs."
 So, looks like its mainly for jobs.
 
+"The privilege that is required to increase the quota assigned to a process. The privilege allows a process that has access to a second process to increase the processor quota assigned to the second process. This privilege is useful for system tuning, but it can be abused."
+
 https://docs.microsoft.com/en-us/windows/win32/procthread/job-objects
 https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/adjust-memory-quotas-for-a-process
 https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera
@@ -66,18 +68,52 @@ https://www.geoffchappell.com/studies/windows/km/ntoskrnl/api/ex/sysinfo/filecac
 https://www.geoffchappell.com/studies/windows/km/ntoskrnl/api/ex/sysinfo/registry_quota.htm
 https://www.geoffchappell.com/studies/windows/km/ntoskrnl/api/ex/sysinfo/va_list.htm
 https://www.geoffchappell.com/studies/windows/km/ntoskrnl/api/ps/psquota/set.htm
+https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_se_exports
 
 5. SE_UNSOLICITED_INPUT_NAME                    TEXT("SeUnsolicitedInputPrivilege")
 ================================================================================
 
+Looks like this privilve is not used any more.
+
+From MSDN:
+"The privilege that is required to read unsolicited input from a terminal device. This privilege is obsolete and unused. It has no effect on the system."
+
+https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/ntifs/ns-ntifs-_se_exports
+https://ss64.com/nt/ntrights.html
+
 6. SE_MACHINE_ACCOUNT_NAME                      TEXT("SeMachineAccountPrivilege")
 ================================================================================
+
+'Add Workstation to domin' privilege
+
+With this privilege, the user can create a computer account.
+This privilege is valid only on domain controllers.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/add-workstations-to-domain
+https://www.ultimatewindowssecurity.com/wiki/page.aspx?spid=AddWsToDomain
 
 7. SE_TCB_NAME                                  TEXT("SeTcbPrivilege")
 ================================================================================
 
 8. SE_SECURITY_NAME                             TEXT("SeSecurityPrivilege")
 ================================================================================
+
+'Manage auditing and security log' privilege
+
+MSDN:
+
+"A process must have the SeSecurityPrivilege privilege to manage the security Event Log and to view or set an object’s SACL. Processes that call audit system services, however, must have the SeAuditPrivilege privilege to successfully generate an audit record."
+
+"This policy setting determines which users can specify object access audit options for individual resources such as
+files, Active Directory objects, and registry keys. These objects specify their system access control lists (SACL). A
+user who is assigned this user right can also view and clear the Security log in Event Viewer."
+
+"Anyone with the Manage auditing and security log user right can clear the Security log to erase important
+evidence of unauthorized activity"
+
+https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/wdm/nf-wdm-seaccesscheck
+https://social.technet.microsoft.com/Forums/lync/en-US/0112535c-9b2c-4f9b-96d6-85cff585b20b/the-process-does-not-possess-the-sesecurityprivilege-privilege-which-is-required-for-this?forum=sharepointadminlegacy
+https://techcommunity.microsoft.com/t5/sql-server/understanding-the-requirements-for-sesecurityprivilege-to-sql/ba-p/384801
 
 9. SE_TAKE_OWNERSHIP_NAME                       TEXT("SeTakeOwnershipPrivilege")
 ================================================================================
