@@ -170,11 +170,29 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 17. SE_BACKUP_NAME                               TEXT("SeBackupPrivilege")
 ================================================================================
 
+'Back up files and directories'
+
+This user right determines which users can bypass file and directory, registry, and other persistent object permissions for the purposes of backing up the system. This user right is effective only when an application attempts access through the NTFS backup application programming interface (API) through a tool such as NTBACKUP.EXE. Otherwise, standard file and directory permissions apply.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/back-up-files-and-directories
+
 18. SE_RESTORE_NAME                              TEXT("SeRestorePrivilege")
 ================================================================================
 
+'Restore files and directories'
+
+This security setting determines which users can bypass file, directory, registry, and other persistent object permissions when they restore backed up files and directories, and it determines which users can set valid security principals as the owner of an object.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/restore-files-and-directories
+
 19. SE_SHUTDOWN_NAME                             TEXT("SeShutdownPrivilege")
 ================================================================================
+
+'Shut down the system'
+
+This security setting determines if a user who is logged on locally to a device can shut down Windows.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/shut-down-the-system
 
 20. SE_DEBUG_NAME                                TEXT("SeDebugPrivilege")
 ================================================================================
@@ -260,7 +278,16 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 
 'Create symbolic links' privilege
 
+A symbolic link is a file-system object that points to another file-system object. The object that's pointed to is called the target. Symbolic links are transparent to users. The links appear as normal files or directories, and they can be acted upon by the user or application in exactly the same manner. Symbolic links are designed to aid in migration and application compatibility with UNIX operating systems. Microsoft has implemented symbolic links to function just like UNIX links.
+
+Users who have the Create symbolic links user right could inadvertently or maliciously expose your system to symbolic link attacks. Symbolic link attacks can be used to change the permissions on a file, to corrupt data, to destroy data, or as a DoS attack.
+
 https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links
 
 36. SE_DELEGATE_SESSION_USER_IMPERSONATE_NAME    TEXT("SeDelegateSessionUserImpersonatePrivilege")
 ================================================================================
+
+Could not find details
+
+https://social.technet.microsoft.com/Forums/en-US/73c22958-5e0a-44a4-a457-0fb94d8bca12/server-2016-strugle-with-sedelegatesessionuserimpersonateprivilege?forum=winserversecurity
+
