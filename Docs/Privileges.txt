@@ -217,6 +217,14 @@ https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createproc
 32. SE_RELABEL_NAME                              TEXT("SeRelabelPrivilege")
 ================================================================================
 
+'Modify an object label' privilege
+
+This privilege determines which user accounts can modify the integrity label of objects, such as files, registry keys, or processes owned by other users. Processes running under a user account can modify the label of an object owned by that user to a lower level without this privilege.
+
+This privilege determines which user accounts can modify the integrity label of objects, such as files, registry keys, or processes owned by other users. Processes running under a user account can modify the label of an object owned by that user to a lower level without this privilege.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/modify-an-object-label
+
 33. SE_INC_WORKING_SET_NAME                      TEXT("SeIncreaseWorkingSetPrivilege")
 ================================================================================
 
