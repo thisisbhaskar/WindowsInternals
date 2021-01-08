@@ -300,6 +300,13 @@ This security setting determines which users are allowed to shut down a device f
 network. This allows members of the Administrators group or specific users to manage computers (for tasks such
 as a restart) from a remote location.
 
+To shutdown remote system:
+-------------------------
+net use \\remote-host\ipc$ password /u:username
+shutdown /r /m \\remote-host
+
+For above command to work, create reg key 'LocalAccountTokenFilterPolicy' as described in https://docs.microsoft.com/en-us/troubleshoot/windows-server/windows-security/user-account-control-and-remote-restriction
+
 https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/force-shutdown-from-a-remote-system
 https://www.codeproject.com/Articles/22718/Shutdown-Remote-Using-Shutdown-exe
 https://www.dreamincode.net/forums/topic/44812-c-shutdown-function-to-remote-pc/
@@ -307,6 +314,8 @@ https://activedirectorypro.com/restart-shutdown-remote-computer/
 http://www.squidworks.net/2011/07/how-to-pass-a-username-and-password-to-windows-shutdown-exe-command/
 https://www.online-tech-tips.com/computer-tips/remote-shutdown-command/
 http://www.squidworks.net/2011/07/how-to-pass-a-username-and-password-to-windows-shutdown-exe-command/
+https://stackoverflow.com/questions/16526627/windows-7-remote-shutdown-access-denied5/16526680#16526680
+https://docs.microsoft.com/en-us/troubleshoot/windows-server/windows-security/user-account-control-and-remote-restriction
 
 25. SE_UNDOCK_NAME                               TEXT("SeUndockPrivilege")
 ================================================================================
