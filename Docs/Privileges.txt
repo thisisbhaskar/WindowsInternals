@@ -222,6 +222,10 @@ https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createproc
 
 Required to increase working set of processes (SetProcessWorkingSetSize)
 
+This policy setting determines which users can increase or decrease the size of the working set of a process. The working set of a process is the set of memory pages currently visible to the process in physical RAM. These pages are resident, and they are available for an application to use without triggering a page fault. The minimum and maximum working set sizes affect the virtual memory paging behavior of a process.
+
+Increasing the working set size for a process decreases the amount of physical memory that is available to the rest of the system.
+
 https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessworkingsetsize
 
 34. SE_TIME_ZONE_NAME                            TEXT("SeTimeZonePrivilege")
