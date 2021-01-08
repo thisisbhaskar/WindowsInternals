@@ -197,6 +197,17 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 20. SE_DEBUG_NAME                                TEXT("SeDebugPrivilege")
 ================================================================================
 
+'Debug programs'
+
+This policy setting determines which users can attach to or open any process, even a process they do not own. Developers who are debugging their own applications do not need this user right. Developers who are debugging new system components need this user right. This user right provides access to sensitive and critical operating-system components.
+
+The Debug programs user right can be exploited to capture sensitive device information from system memory or to access and modify kernel or application structures. Some attack tools exploit this user right to extract hashed passwords and other private security information or to insert malware. By default, the Debug programs user right is assigned only to administrators, which helps mitigate risk from this vulnerability.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/debug-programs
+https://devblogs.microsoft.com/oldnewthing/20080314-00/?p=23113
+https://stackoverflow.com/questions/2932461/windows-vista-windows-7-privilege-sedebugprivilege-openprocess
+https://stackoverflow.com/questions/2932461/windows-vista-windows-7-privilege-sedebugprivilege-openprocess
+
 21. SE_AUDIT_NAME                                TEXT("SeAuditPrivilege")
 ================================================================================
 
@@ -205,6 +216,12 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 
 23. SE_CHANGE_NOTIFY_NAME                        TEXT("SeChangeNotifyPrivilege")
 ================================================================================
+
+'Bypass traverse checking'
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/bypass-traverse-checking
+
+This policy setting determines which users (or a process that acts on behalf of the user’s account) have permission to navigate an object path in the NTFS file system or in the registry without being checked for the Traverse Folder special access permission. This user right does not allow the user to list the contents of a folder. It only allows the user to traverse folders to access permitted files or subfolders.
 
 24. SE_REMOTE_SHUTDOWN_NAME                      TEXT("SeRemoteShutdownPrivilege")
 ================================================================================
