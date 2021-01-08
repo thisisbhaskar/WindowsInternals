@@ -304,6 +304,9 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 https://www.codeproject.com/Articles/22718/Shutdown-Remote-Using-Shutdown-exe
 https://www.dreamincode.net/forums/topic/44812-c-shutdown-function-to-remote-pc/
 https://activedirectorypro.com/restart-shutdown-remote-computer/
+http://www.squidworks.net/2011/07/how-to-pass-a-username-and-password-to-windows-shutdown-exe-command/
+https://www.online-tech-tips.com/computer-tips/remote-shutdown-command/
+http://www.squidworks.net/2011/07/how-to-pass-a-username-and-password-to-windows-shutdown-exe-command/
 
 25. SE_UNDOCK_NAME                               TEXT("SeUndockPrivilege")
 ================================================================================
@@ -365,6 +368,12 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 
 31. SE_TRUSTED_CREDMAN_ACCESS_NAME               TEXT("SeTrustedCredManAccessPrivilege")
 ================================================================================
+
+'Access Credential Manager as a trusted caller'
+
+The Access Credential Manager as a trusted caller policy setting is used by Credential Manager during backup and restore. No accounts should have this privilege because it's assigned only to the Winlogon service. Saved credentials of users may be compromised if this privilege is given to other entities.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/access-credential-manager-as-a-trusted-caller
 
 32. SE_RELABEL_NAME                              TEXT("SeRelabelPrivilege")
 ================================================================================
