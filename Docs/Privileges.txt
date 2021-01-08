@@ -201,6 +201,17 @@ tab of the S ystem Proper ties dialog box or through using internal application 
 16. SE_CREATE_PERMANENT_NAME                     TEXT("SeCreatePermanentPrivilege")
 ================================================================================
 
+'Create permanent shared objects'
+
+This user right determines which accounts can be used by processes to create a directory object by using the object
+manager. Directory objects include Active Directory objects, files and folders, printers, registry keys, processes, and
+threads. Users who have this capability can create permanent shared objects, including devices, semaphores, and
+mutexes. This user right is useful to kernel-mode components that extend the object namespace. Because
+components that are running in kernel-mode inherently have this user right assigned to them, it is not necessary to
+specifically assign it.
+
+https://www.ultimatewindowssecurity.com/wiki/page.aspx?spid=CreatePermObj
+
 17. SE_BACKUP_NAME                               TEXT("SeBackupPrivilege")
 ================================================================================
 
