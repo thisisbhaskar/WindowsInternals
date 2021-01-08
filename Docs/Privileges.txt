@@ -194,6 +194,14 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 25. SE_UNDOCK_NAME                               TEXT("SeUndockPrivilege")
 ================================================================================
 
+'Remove computer from docking station' privilege
+
+This security setting determines whether a user can undock a portable device from its docking station without logging on. This policy setting only affects scenarios that involve a portable computer and its docking station. If this user right is assigned to the user’s account (or if the user is a member of the assigned group), the user must log on before removing the portable device from its docking station. Otherwise, as a security measure, the user will not be able to log on after the device is removed from the docking station. If this policy is not assigned, the user may remove the portable device from its docking station without logging on, and then have the ability to start and log on to the device afterwards in its undocked state.
+
+Anyone who has the Remove computer from docking station user right can log on and then remove a portable device from its docking station.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/remove-computer-from-docking-station
+
 26. SE_SYNC_AGENT_NAME                           TEXT("SeSyncAgentPrivilege")
 ================================================================================
 
@@ -249,6 +257,10 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 
 35. SE_CREATE_SYMBOLIC_LINK_NAME                 TEXT("SeCreateSymbolicLinkPrivilege")
 ================================================================================
+
+'Create symbolic links' privilege
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links
 
 36. SE_DELEGATE_SESSION_USER_IMPERSONATE_NAME    TEXT("SeDelegateSessionUserImpersonatePrivilege")
 ================================================================================
