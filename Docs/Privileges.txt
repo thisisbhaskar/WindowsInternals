@@ -134,10 +134,16 @@ Every object has an owner, whether the object resides in an NTFS volume or Activ
 
 By default, the owner is the person who or the process which created the object. Owners can always change permissions to objects, even when they are denied all access to the object.
 
+Any users with the Take ownership of files or other objects user right can take control of any object, regardless of the permissions on that object, and then make any changes that they want to make to that object. Such changes could result in exposure of data, corruption of data, or a denial-of-service condition.
+
 https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/take-ownership-of-files-or-other-objects
 
 10. SE_LOAD_DRIVER_NAME                          TEXT("SeLoadDriverPrivilege")
 ================================================================================
+
+'Load and unload device drivers'
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/load-and-unload-device-drivers
 
 11. SE_SYSTEM_PROFILE_NAME                       TEXT("SeSystemProfilePrivilege")
 ================================================================================
