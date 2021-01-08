@@ -1,3 +1,5 @@
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment
+
 
 1. SE_CREATE_TOKEN_NAME                              TEXT("SeCreateTokenPrivilege")
 ================================================================================
@@ -185,6 +187,14 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 14. SE_INC_BASE_PRIORITY_NAME                    TEXT("SeIncreaseBasePriorityPrivilege")
 ================================================================================
 
+'Increase scheduling priority'
+
+This policy setting determines which user accounts can increase the base priority class of a process. It is not a privileged operation to increase relative priority within a priority class. This user right is not required by administrative tools that are supplied with the operating system, but it might be required by software development tools.
+
+Specifically, this security setting determines which accounts can use a process with Write Property access to another process to increase the run priority that is assigned to the other process. A user with this privilege can change the scheduling priority of a process through the Task Manager user interface.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/increase-scheduling-priority
+
 15. SE_CREATE_PAGEFILE_NAME                      TEXT("SeCreatePagefilePrivilege")
 ================================================================================
 
@@ -256,8 +266,21 @@ https://stackoverflow.com/questions/2932461/windows-vista-windows-7-privilege-se
 21. SE_AUDIT_NAME                                TEXT("SeAuditPrivilege")
 ================================================================================
 
+'Generate security audits'
+
+This policy setting determines which accounts can be used by a process to generate audit records in the security event log. The Local Security Authority Subsystem Service (LSASS) writes events to the log. You can use the information in the security event log to trace unauthorized device access.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/generate-security-audits
+https://www.ultimatewindowssecurity.com/wiki/page.aspx?spid=GenerateSecAud
+
 22. SE_SYSTEM_ENVIRONMENT_NAME                   TEXT("SeSystemEnvironmentPrivilege")
 ================================================================================
+
+'Modify firmware environment values'
+
+This security setting determines who can modify firmware environment values. Firmware environment values are
+settings that are stored in the nonvolatile RAM of non-x86-based computers. The effect of the setting depends on
+the processor.
 
 23. SE_CHANGE_NOTIFY_NAME                        TEXT("SeChangeNotifyPrivilege")
 ================================================================================
@@ -270,6 +293,17 @@ This policy setting determines which users (or a process that acts on behalf of 
 
 24. SE_REMOTE_SHUTDOWN_NAME                      TEXT("SeRemoteShutdownPrivilege")
 ================================================================================
+
+'Force shutdown from a remote system'
+
+This security setting determines which users are allowed to shut down a device from a remote location on the
+network. This allows members of the Administrators group or specific users to manage computers (for tasks such
+as a restart) from a remote location.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/force-shutdown-from-a-remote-system
+https://www.codeproject.com/Articles/22718/Shutdown-Remote-Using-Shutdown-exe
+https://www.dreamincode.net/forums/topic/44812-c-shutdown-function-to-remote-pc/
+https://activedirectorypro.com/restart-shutdown-remote-computer/
 
 25. SE_UNDOCK_NAME                               TEXT("SeUndockPrivilege")
 ================================================================================
@@ -285,11 +319,31 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 26. SE_SYNC_AGENT_NAME                           TEXT("SeSyncAgentPrivilege")
 ================================================================================
 
+'Synchronize directory service data'
+
+This policy setting determines which users and groups have authority to synchronize all directory service data, regardless of the protection for objects and properties. This privilege is required to use LDAP directory synchronization (dirsync) services. Domain controllers have this user right inherently because the synchronization process runs in the context of the System account on domain controllers.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/synchronize-directory-service-data
+
 27. SE_ENABLE_DELEGATION_NAME                    TEXT("SeEnableDelegationPrivilege")
 ================================================================================
 
+'Enable computer and user accounts to be trusted for delegation'
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/enable-computer-and-user-accounts-to-be-trusted-for-delegation
+
 28. SE_MANAGE_VOLUME_NAME                        TEXT("SeManageVolumePrivilege")
 ================================================================================
+
+'Perform volume maintenance tasks'
+
+This policy setting determines which users can perform volume or disk management tasks, such as defragmenting
+an existing volume, creating or removing volumes, and running the Disk Cleanup tool.
+Use caution when assigning this user right. Users with this user right can explore disks and extend files in to
+memory that contains other data. When the extended files are opened, the user might be able to read and modify
+the acquired data.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/perform-volume-maintenance-tasks
 
 29. SE_IMPERSONATE_NAME                          TEXT("SeImpersonatePrivilege")
 ================================================================================
