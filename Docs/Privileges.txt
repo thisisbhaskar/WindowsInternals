@@ -188,6 +188,16 @@ https://docs.microsoft.com/en-us/windows/security/threat-protection/security-pol
 15. SE_CREATE_PAGEFILE_NAME                      TEXT("SeCreatePagefilePrivilege")
 ================================================================================
 
+'Create a pagefile'
+
+Windows designates a section of the hard drive as virtual memory known as the page file, or more specifically, as
+pagefile.sys. It is used to supplement the computer’s Random Access Memory (RAM) to improve performance for
+programs and data that are used frequently. Although the file is hidden from browsing, you can manage it using
+the system settings.
+This policy setting determines which users can create and change the size of a page file. It determines whether
+users can specify a page file size for a particular drive in the Performance Options box located on the Advanced
+tab of the S ystem Proper ties dialog box or through using internal application interfaces (APIs).
+
 16. SE_CREATE_PERMANENT_NAME                     TEXT("SeCreatePermanentPrivilege")
 ================================================================================
 
@@ -277,6 +287,16 @@ https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createproc
 
 30. SE_CREATE_GLOBAL_NAME                        TEXT("SeCreateGlobalPrivilege")
 ================================================================================
+
+'Create global objects'
+
+This policy setting determines which users can create global objects that are available to all sessions. Users can still
+create objects that are specific to their own session if they do not have this user right.
+A global object is an object that is created to be used by any number of processes or threads, even those not
+started within the user’s session. Remote Desktop Services uses global objects in its processes to facilitate
+connections and access.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-global-objects
 
 31. SE_TRUSTED_CREDMAN_ACCESS_NAME               TEXT("SeTrustedCredManAccessPrivilege")
 ================================================================================
