@@ -124,6 +124,18 @@ https://techcommunity.microsoft.com/t5/sql-server/understanding-the-requirements
 11. SE_SYSTEM_PROFILE_NAME                       TEXT("SeSystemProfilePrivilege")
 ================================================================================
 
+'Profile system performance' privilge
+
+This security setting determines which users can use Windows performance monitoring tools to monitor the
+performance of system processes.
+
+The Profile system performance user right poses a moderate vulnerability. Attackers with this user right could
+monitor a computer's performance to help identify critical processes that they might want to attack directly.
+Attackers might also be able to determine what processes are active on the computer so that they could identify
+countermeasures to avoid, such as anti-virus software or an intrusion detection system.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/profile-system-performance
+
 12. SE_SYSTEMTIME_NAME                           TEXT("SeSystemtimePrivilege")
 ================================================================================
 
