@@ -37,19 +37,22 @@ Required to increase/set quota information for various resource of the process.
 
 Process Working Set (Min/Max)
 Processor Time
-Paged Pool
-Non-Paged Pool
 Paged Pool Registry Can use
+Virtual Memroy Limit
 
 CreateProcessAsUser
 PspCpuQuotaControl
 PsSetCpuInformation
 
-ZwSetSystemInformation/NtSetSystemInformation with following information classes:
+ZwSetSystemInformation/NtSetSystemInformation:
   SYSTEM_REGISTRY_QUOTA_INFORMATION (SystemRegistryQuotaInformation)
   SYSTEM_FILECACHE_INFORMATION (SystemFileCacheInformation)
   SYSTEM_VA_LIST_INFORMATION (SystemVirtualAddressInformation)
   PS_CPU_QUOTA_SET_INFORMATION (SystemCpuQuotaInformation)
+
+SetInformationJobObject:
+  JOBOBJECT_BASIC_LIMIT_INFORMATION
+  JOBOBJECT_EXTENDED_LIMIT_INFORMATION
 
 From MSDN:
 "Restrict the Adjust memory quotas for a process user right to only users who require the ability to adjust memory quotas to perform their jobs."
