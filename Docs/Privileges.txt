@@ -135,12 +135,28 @@ Attackers might also be able to determine what processes are active on the compu
 countermeasures to avoid, such as anti-virus software or an intrusion detection system.
 
 https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/profile-system-performance
+https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4704
 
 12. SE_SYSTEMTIME_NAME                           TEXT("SeSystemtimePrivilege")
 ================================================================================
 
+'Change the system time' privilege
+
+This policy setting determines which users can adjust the time on the device's internal clock. This right allows the computer user to change the date and time associated with records in the event logs, database transactions, and the file system. This right is also required by the process that performs time synchronization. This setting does not impact the user’s ability to change the time zone or other display characteristics of the system time. 
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/change-the-system-time
+
 13. SE_PROF_SINGLE_PROCESS_NAME                  TEXT("SeProfileSingleProcessPrivilege")
 ================================================================================
+
+'Profile single process' privilege
+
+This policy setting determines which users can view a sample performance of an application process. Typically, you don't need this user right to use the performance reporting tools included in the operating system. However, you do need this user right if the system’s monitor components are configured to collect data through Windows Management Instrumentation (WMI).
+
+The Profile single process user right presents a moderate vulnerability. Attackers with this user right could monitor a computer's performance to help identify critical processes that they might want to attack directly. Attackers may be able to determine what processes run on the computer so that they could identify countermeasures that they may need to avoid, such as anti-virus software or an intrusion-detection system. They could also identify other users who are logged on to a computer.
+
+https://www.ultimatewindowssecurity.com/wiki/page.aspx?spid=ProfSingle
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/profile-single-process
 
 14. SE_INC_BASE_PRIORITY_NAME                    TEXT("SeIncreaseBasePriorityPrivilege")
 ================================================================================
@@ -210,6 +226,14 @@ https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocess
 
 34. SE_TIME_ZONE_NAME                            TEXT("SeTimeZonePrivilege")
 ================================================================================
+
+'Change the time zone' privilege
+
+This policy setting determines which users can adjust the time zone that is used by the device for displaying the local time, which includes the device's system time plus the time zone offset.
+
+Changing the time zone represents little vulnerability because the system time is not affected. This setting merely enables users to display their preferred time zone while being synchronized with domain controllers in different time zones.
+
+https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/change-the-time-zone
 
 35. SE_CREATE_SYMBOLIC_LINK_NAME                 TEXT("SeCreateSymbolicLinkPrivilege")
 ================================================================================
