@@ -1,3 +1,14 @@
+
+Logon Session LUID
+------------------
+
+https://docs.microsoft.com/en-us/windows/win32/api/ntsecapi/nf-ntsecapi-lsaenumeratelogonsessions
+
+Logon Session SID
+-----------------
+
+https://www.installsetupconfig.com/win32programming/accesscontrollistaclexample3_4.html
+
 Links
 -----
 https://docs.microsoft.com/en-us/windows/win32/secauthn/lsa-logon-sessions
