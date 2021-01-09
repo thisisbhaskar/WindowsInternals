@@ -1,5 +1,18 @@
+Links
+-----
 https://docs.microsoft.com/en-us/windows/win32/secauthn/lsa-logon-sessions
 https://www.microsoftpressstore.com/articles/article.aspx?p=2224373&seqNum=7
+
+Important Functions
+-------------------
+LsaEnumerateLogonSessions - Enumerate logon sessions
+LsaGetLogonSessionData - Get logon sesion data
+LsaLookupSid(s) - 
+LsaLogonUser -
+LsaLookupName(s) -
+
+Logon Types
+------------
 
 SECURITY_LOGON_TYPE represents logon type value.
 
