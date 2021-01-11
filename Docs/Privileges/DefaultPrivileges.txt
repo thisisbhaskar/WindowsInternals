@@ -1,0 +1,10 @@
+On Windows 10:
+--------------
+
+The standard user seems to get following privileges by default:
+
+SeChangeNotifyPrivilege
+SeIncreaseWorkingSetPrivilege
+SeShutdownPrivilege
+SeTimeZonePrivilege
+SeUndockPrivilege
