@@ -9,4 +9,7 @@ SeShutdownPrivilege
 SeTimeZonePrivilege
 SeUndockPrivilege
 
-For Administrative user, most of the privilegesa are added:
+For Administrative user, most of the privileges are added:
+
+
+For elevated user, the corresponding privileges are added:
