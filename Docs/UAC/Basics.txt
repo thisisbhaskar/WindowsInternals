@@ -1,0 +1,45 @@
+https://docs.microsoft.com/en-us/archive/msdn-magazine/2007/january/teach-your-apps-to-work-with-windows-vista-user-account-control
+
+The primary goal of UAC is to make the default user token that applications are run with mimic that of a member of the Users group.
+This starts with creating a restricted, or filtered, token during interactive logon for users with elevated privileges.
+When more privileges are necessary to execute a restricted operation, the user will be prompted for authorization on the 
+secure desktop. UAC also includes other technologies to support application compatibility and to secure the elevated processes.
+
+Who Creates Split Tokens : 
+------------------------
+
+LSA creates two tokens if the token built has either following groups or privileges
+
+Built-In Administrators
+Power Users
+Account Operators
+Server Operators
+Printer Operators
+Backup Operators
+RAS Servers Group
+Windows NT 4.0 App Compat Group
+Network Configuration Operators
+Domain Administrators
+Domain Controllers
+Certificate Publishers
+Schema Administrators
+Enterprise Administrators
+Group Policy Administrators
+
+SeCreateTokenPrivilege
+SeTcbPrivilege
+SeTakeOwnershipPrivilege
+SeBackupPrivilege
+SeRestorePrivilege
+SeDebugPrivilege
+SeImpersonatePrivilege
+SeRelabelPrivilege
+
+The filtered token contains following privileges:
+------------------------------------------------
+
+SeShutdownPrivilege	           - Shut down the system.
+SeChangeNotifyPrivilege	       - Bypass traverse checking.
+SeUndockPrivilege	             - Remove computer from docking station.
+SeIncreaseWorkingSetPrivilege	 - Increase a process working set.
+SeTimeZonePrivilege	           - Change the time zone.
