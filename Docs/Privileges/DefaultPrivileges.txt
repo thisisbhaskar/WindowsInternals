@@ -8,3 +8,5 @@ SeIncreaseWorkingSetPrivilege
 SeShutdownPrivilege
 SeTimeZonePrivilege
 SeUndockPrivilege
+
+For Administrative user, most of the privilegesa are added:
