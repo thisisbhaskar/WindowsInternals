@@ -1,3 +1,5 @@
+https://superuser.com/questions/215121/administrator-account-vs-elevated-privileges-whats-the-difference
+
 On Windows 10:
 --------------
 
