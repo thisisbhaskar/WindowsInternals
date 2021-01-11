@@ -8,7 +8,17 @@ secure desktop. UAC also includes other technologies to support application comp
 Who Creates Split Tokens : 
 ------------------------
 
-LSA creates two tokens if the token built has either following groups or privileges
+LSA creates two tokens if the unfiltered (original) token built has either following groups or privileges.
+LSA users a version of CreateRestrictedToken to create filterd token.
+These two tokens are linked and the fully privileged token can be obtained from the filtered token using the GetTokenInformation API with 
+the new TokenLinkedToken information type. 
+
+UAC Does not apply to following logon types:
+--------------------------------------------
+Service
+Network
+Batch
+
 
 Built-In Administrators
 Power Users
