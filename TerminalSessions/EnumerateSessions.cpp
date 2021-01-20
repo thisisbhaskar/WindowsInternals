@@ -80,7 +80,7 @@ int main(int argc, char * argv[])
 
     for (DWORD i = 0; i < l_count; i++)
     {
-        wprintf(L"  * SessionID %d: \n      State: %d\n      StationName: %s\n",
+        wprintf(L"  * SessionID: %d \n      State: %d\n      StationName: %s\n",
                 l_sessions[i].SessionId,
                 l_sessions[i].State,
                 l_sessions[i].pWinStationName);
@@ -107,6 +107,7 @@ int main(int argc, char * argv[])
 
     WTSFreeMemory(l_sessions);
 }
+
 
 /*
 typedef enum _WTS_CONNECTSTATE_CLASS {
