@@ -80,3 +80,48 @@ When connected with RDP:
       User:
       Domain:
       ClientName:
+
+RDP user along with another disconnected user:
+==============================================
+
+ * SessionID: 0
+      State: 4
+      WinStation: Services
+      User:
+      Domain:
+      ClientName:
+
+  * SessionID: 1
+      State: 0
+      WinStation: RDP-Tcp#9
+      User: thisisbhaskar
+      Domain: DESKTOP-4D848QP
+      ClientName: INCT-VIJAYBASKE
+
+  * SessionID: 2
+      State: 4
+      WinStation:
+      User: vbr-bo
+      Domain: DESKTOP-4D848QP
+      ClientName:
+
+  * SessionID: 3
+      State: 1
+      WinStation: Console
+      User:
+      Domain:
+      ClientName:
+
+  * SessionID: 65536
+      State: 6
+      WinStation: 7A78855482A04FA781DC
+      User:
+      Domain:
+      ClientName:
+
+  * SessionID: 65537
+      State: 6
+      WinStation: RDP-Tcp
+      User:
+      Domain:
+      ClientName:
