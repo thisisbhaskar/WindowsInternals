@@ -110,15 +110,15 @@ int main(int argc, char * argv[])
 
 /*
 typedef enum _WTS_CONNECTSTATE_CLASS {
-WTSActive,
-WTSConnected,
-WTSConnectQuery,
-WTSShadow,
-WTSDisconnected,
-WTSIdle,
-WTSListen,
-WTSReset,
-WTSDown,
-WTSInit
+[0] WTSActive,
+[1] WTSConnected,
+[2] WTSConnectQuery,
+[3] WTSShadow,
+[4] WTSDisconnected,
+[5] WTSIdle,
+[6] WTSListen,
+[7] WTSReset,
+[8] WTSDown,
+[9] WTSInit
 } WTS_CONNECTSTATE_CLASS;
 */
