@@ -86,11 +86,19 @@ int main(int argc, char * argv[])
                 l_sessions[i].pWinStationName);
 
         WCHAR *l_session_user;
-        DWORD l_bytes;
+        DWORD l_bytes = 0;
         if (WTSQuerySessionInformation(WTS_CURRENT_SERVER_HANDLE, l_sessions[i].SessionId, WTSUserName, &l_session_user, &l_bytes))
         {
             wprintf(L"      User: %s\n", l_session_user);
             WTSFreeMemory(l_session_user);
+        }
+
+        WCHAR *l_user_domain;
+        l_bytes = 0;
+        if (WTSQuerySessionInformation(WTS_CURRENT_SERVER_HANDLE, l_sessions[i].SessionId, WTSDomainName, &l_user_domain, &l_bytes))
+        {
+            wprintf(L"      Domain: %s\n", l_user_domain);
+            WTSFreeMemory(l_user_domain);
         }
 
         std::cout << endl;
@@ -99,7 +107,6 @@ int main(int argc, char * argv[])
 
     WTSFreeMemory(l_sessions);
 }
-
 
 /*
 typedef enum _WTS_CONNECTSTATE_CLASS {
