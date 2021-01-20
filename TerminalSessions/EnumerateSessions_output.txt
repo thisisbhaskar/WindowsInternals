@@ -1,0 +1,82 @@
+/*
+typedef enum _WTS_CONNECTSTATE_CLASS {
+[0] WTSActive,
+[1] WTSConnected,
+[2] WTSConnectQuery,
+[3] WTSShadow,
+[4] WTSDisconnected,
+[5] WTSIdle,
+[6] WTSListen,
+[7] WTSReset,
+[8] WTSDown,
+[9] WTSInit
+} WTS_CONNECTSTATE_CLASS;
+*/
+When connected with console:
+===========================
+
+ * SessionID: 0           <= Services session
+      State: 4            <= Seems to be always in WTSDisconnected state
+      WinStation: Services
+      User:
+      Domain:
+      ClientName:
+
+  * SessionID: 1
+      State: 0               <= Active Session (WTSActive)
+      WinStation: Console
+      User: thisisbhaskar
+      Domain: DESKTOP-4D848QP
+      ClientName:            <= Client Name is empty 
+
+  * SessionID: 65536
+      State: 6              <= Listening (WTSListen)
+      WinStation: 7A78855482A04FA781DC
+      User:
+      Domain:
+      ClientName:
+
+  * SessionID: 65537
+      State: 6              <= Listening (WTSListen)
+      WinStation: RDP-Tcp
+      User:
+      Domain:
+      ClientName:
+      
+When connected with RDP:
+=======================
+
+   * SessionID: 0
+      State: 4
+      WinStation: Services
+      User:
+      Domain:
+      ClientName:
+
+  * SessionID: 1
+      State: 0
+      WinStation: RDP-Tcp#3
+      User: thisisbhaskar
+      Domain: DESKTOP-4D848QP
+      ClientName: INCT-VIJAYBASKE
+
+  * SessionID: 2
+      State: 1
+      WinStation: Console
+      User:
+      Domain:
+      ClientName:
+
+  * SessionID: 65536
+      State: 6
+      WinStation: 7A78855482A04FA781DC
+      User:
+      Domain:
+      ClientName:
+
+  * SessionID: 65537
+      State: 6
+      WinStation: RDP-Tcp
+      User:
+      Domain:
+      ClientName:
