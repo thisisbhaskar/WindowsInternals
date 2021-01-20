@@ -32,3 +32,4 @@ WTS_CONNECTSTATE_CLASS
 https://social.msdn.microsoft.com/Forums/vstudio/en-US/bb240b9f-ae99-44c4-b7a2-3e9a657fd161/wtsconnectstateclass-detailed?forum=csharpgeneral
 https://stackoverflow.com/questions/12063873/trying-to-interpret-user-session-states-on-windows-os
 https://stackoverflow.com/questions/43552774/windows-query-session-states
+https://stackoverflow.com/questions/1445272/understanding-session-information-from-wtsenumeratesessions#:~:text=The%20RDP%2DTcp%20session%20with,a%20session's%20username%20using%20WTSQuerySessionInformation.
