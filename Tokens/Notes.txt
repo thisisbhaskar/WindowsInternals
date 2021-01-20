@@ -1,11 +1,15 @@
-Different ways to get Tokens
+Different ways to get Tokens:
 ----------------------------
+
 Token creation with LogonUser
   - LogonUser, LsaLogonUser
+  
 Token from Session
-  - WTSQueryUserToken - Needs SeTcbPrivilege)
+  - WTSQueryUserToken - Needs SeTcbPrivilege
+  
 Token from Logon Session
   - ??
+  
 Token from Process
   - OpenProcessToken
   - GetCurrentProcessToken
