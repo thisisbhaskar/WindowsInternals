@@ -80,7 +80,7 @@ int main(int argc, char * argv[])
 
     for (DWORD i = 0; i < l_count; i++)
     {
-        wprintf(L"  * SessionID: %d \n      State: %d\n      StationName: %s\n",
+        wprintf(L"  * SessionID: %d \n      State: %d\n      WinStation: %s\n",
                 l_sessions[i].SessionId,
                 l_sessions[i].State,
                 l_sessions[i].pWinStationName);
@@ -99,6 +99,24 @@ int main(int argc, char * argv[])
         {
             wprintf(L"      Domain: %s\n", l_user_domain);
             WTSFreeMemory(l_user_domain);
+        }
+
+        /*
+        WCHAR *l_station_name;
+        l_bytes = 0;
+        if (WTSQuerySessionInformation(WTS_CURRENT_SERVER_HANDLE, l_sessions[i].SessionId, WTSWinStationName, &l_station_name, &l_bytes))
+        {
+            wprintf(L"      WinStation: %s\n", l_station_name);
+            WTSFreeMemory(l_station_name);
+        }
+        */
+   
+        WCHAR *l_client_name;
+        l_bytes = 0;
+        if (WTSQuerySessionInformation(WTS_CURRENT_SERVER_HANDLE, l_sessions[i].SessionId, WTSClientName, &l_client_name, &l_bytes))
+        {
+            wprintf(L"      ClientName: %s\n", l_client_name);
+            WTSFreeMemory(l_client_name);
         }
 
         std::cout << endl;
