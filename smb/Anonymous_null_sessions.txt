@@ -1,4 +1,5 @@
 Null sessions are the ones connected to SMB server with empty uersname and password.
+When no share name is provided while connecting, Windows trys to connect to ipc$ share
 
 * Shares enumeration with 'Anonymous (Guest) (null session) user'
  
