@@ -1,0 +1,1 @@
+Null sessions are the ones connected to SMB server with empty uersname and password.
