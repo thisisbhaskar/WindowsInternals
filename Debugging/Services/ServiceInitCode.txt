@@ -1,0 +1,27 @@
+Server Side (Where Service is going to Run) 
+===========================================
+
+REGISTRY MODIFICATION: On the System that is starting the service, create the following registry key: 
+* HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\<ProgramName> 
+  Here program name is the name of the service application executable name including extension (Ex: RadarS.exe) 
+* Create a string data value named "Debugger" under the above key.  Value of the string should be as follows: 
+  "C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\ntsd.exe" -server tcp:port=55555 -noio 
+  Here, first parameter is the full path of the ntsd.exe debugger. Part can be changed to any available value. 
+
+SYMBOL FILES: 
+* Copy the symbol file in the directory where exe file resides. 
+* Start the service with 'sc start' command. 
+
+ 
+
+Client Side (Remote location where client debugger is going to Run) 
+==================================================================
+ 
+* Open Windbg.exe 
+* From 'Files' -> 'Connection to Remote Sessions…." 
+* Type the following the Connection String editor. 
+  tcp:server=<serverIP>,port=<portnumber> 
+* Clicking OK should make a connection with the server. 
+* You can set the source path to do source line debugging 
+
+Happy Debugging. 
