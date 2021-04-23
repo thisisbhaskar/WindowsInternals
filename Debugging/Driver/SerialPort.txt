@@ -1,0 +1,41 @@
+On the Target Virtual Machine (Debuggee) 
+========================================
+
+Follow the below steps to create a serial port on the Target Virtual Machine. 
+* Power down the Virtual Machine. 
+* Once powered down, go to Virtual Machine Settings dialog by clicking on "VM" and then "Settings" 
+* Under "Hardware" tab, select "Serial Port". Then click on "Add…" button. 
+* This will create a Serial port. 
+* In the Port properties page, do following actions: 
+  Select "Connect at power on" in "Device status" section.
+  Select "Use named pipe:" option.  
+  In the name editor of the "Use named pipe:", enter "\\.\pipe\com1" 
+  Select "This end is the server." in the first drop down. 
+  Select "The other end is an application." in the second drop down. 
+  Select "Yield CPU on poll" in I/O mode section. 
+* Select "Ok" to save the settings 
+* If you get any error saying the port is in use in another server, make sure that no other Virtual Machine which is configured a Serial Port with this name is running. 
+
+Now, reboot the Virtual Machine and perform following steps. 
+Configuring required "dbgsettings" on the Target Virtual Machine. 
+* Open command prompt with elevated privileges ( Run as Administrator) 
+* Enable debugging on the target machine using the command "bcdedit /debug on" 
+* Specify the debug settings using the command: "bcdedit /dbgsettings serial debugport:1 baudrate:115200" 
+* In the above command, you must make sure that the "debugport" is the serial port number created on the virtual machine that is mapped to the named pipe. 
+* You can verify the settings by running the command: "bcdedit /dbgsettings" 
+
+Now, again, reboot the Virtual Machine. Once rebooted, Virtual Machine is ready for debugging. 
+
+On the Host Virtual/Physical Machine (Debugger) 
+===============================================
+
+Follow the below steps to connect to the Target Virtual Machine from the WinDBG. 
+* Start WinDBG, select "File" and then select "Kernel Debug…" 
+* Select "COM" option, and enter the following details: 
+  In Baud Rate, enter the baud rate  (115200) you have entered on the Target Virtual Machine. 
+  In Port, enter the port name "\\.\pipe\com1" 
+  Select "Pipe" check box. 
+  Click "Ok.  
+* Once clicked on "Ok", wait for the WinDBG to connect to target machine. 
+
+ 
