@@ -1,1 +1,10 @@
+On 32-bit Systems
+=================
 
+SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall
+
+On 64-bit Systems
+=================
+
+SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall
+Needs to be called for KEY_WOW64_64KEY and KEY_WOW64_32KEY
