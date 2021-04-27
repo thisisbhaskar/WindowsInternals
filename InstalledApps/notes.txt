@@ -13,3 +13,9 @@ Effectively we are reading from below locations for 64-bit systems:
 --------------------------------------------------------------------
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+
+Notes:
+======
+Looks like we need to read from user-specific programs registry also.
+"HKEY_USERS\\%\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+osquery/tables/system/windows/programs.cpp
