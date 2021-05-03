@@ -1,0 +1,5 @@
+Needs to install WinDDK to compile drivers for WindowsXP (<Win7)
+==================================================================
+https://www.microsoft.com/en-in/download/details.aspx?id=11800
+
+https://www.microsoft.com/en-in/download/confirmation.aspx?id=11800
