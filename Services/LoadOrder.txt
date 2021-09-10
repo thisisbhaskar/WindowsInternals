@@ -1,7 +1,9 @@
 Windows SCM has a list of installed services and driver services. This means a service can be a normal executable (.exe) or a driver (.sys) file.
+Information about each services includes detailsa bout how each service or driver should be started.
 
 A service can be configured to start automatically, on-demand or can be disabled.
 
 
 https://serverfault.com/questions/859730/what-is-the-start-order-of-services-in-windows-server
 https://docs.microsoft.com/en-us/windows/win32/services/about-services
+https://stackoverflow.com/questions/50064755/will-a-startup-windows-service-always-run-before-a-startup-application
