@@ -1,5 +1,9 @@
-Get Process Handles 
---------------------
+Get Process Handles Count
+-------------------------
 
 To get the count of process handles, we can use GetProcessHandleCount function.
-  https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesshandlecount
+https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesshandlecount
+
+Enumerate Process Handles
+--------------------------
+https://stackoverflow.com/questions/733384/how-to-enumerate-process-handles
