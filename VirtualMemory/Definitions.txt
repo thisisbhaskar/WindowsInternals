@@ -1,0 +1,11 @@
+Process
+-------
+* Working set
+  Current RAM usage by the process. This includes both private and sharable parts.
+  Sharable
+* Private working set
+* Sharable working set
+* Pagefile usage
+* Page faults
+* Paged Pool Usage
+* Non Paged Pool Usage
