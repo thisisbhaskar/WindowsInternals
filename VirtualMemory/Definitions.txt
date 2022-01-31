@@ -3,8 +3,6 @@ Process
 * Working set
   Current RAM usage by the process. This includes both private and sharable parts. Shared data includes pages that contain all instructions the application executes, including those in DLLs and the system DLLs. This also includes memory mapped files as they are sharable across applications.
   Sharable
-* Private working set
-* Sharable working set
 * Pagefile usage
 * Page faults
 * Paged Pool Usage
