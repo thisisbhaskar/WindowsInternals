@@ -1,0 +1,2 @@
+systeminfo.exe
+msinfo32.exe
