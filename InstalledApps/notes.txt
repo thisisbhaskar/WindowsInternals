@@ -1,3 +1,5 @@
+* https://social.technet.microsoft.com/Forums/lync/en-US/d913471a-d7fb-448d-869b-da9025dcc943/where-does-addremove-programs-get-its-information-from-in-the-registry?forum=w7itprogeneral
+
 On 32-bit Systems
 =================
 
