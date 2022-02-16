@@ -2,20 +2,21 @@ On 32-bit Systems
 =================
 
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+"HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
 
 On 64-bit Systems
 =================
 
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
-Needs to be called for KEY_WOW64_64KEY and KEY_WOW64_32KEY
-
-Effectively we are reading from below locations for 64-bit systems:
---------------------------------------------------------------------
-"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
 
-Notes:
-======
-Looks like we need to read from user-specific programs registry also.
-"HKEY_USERS\\%\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+"HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+"HKEY_USERS\\<All_User_SIDS>\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+
 osquery/tables/system/windows/programs.cpp
+
+Hiding Applications
+===================
+Windows Add & Remove programs will hide applications which has the registry key "SystemComponent" as 1.
+https://docs.microsoft.com/en-us/windows/win32/msi/arpsystemcomponent?redirectedfrom=MSDN
+Setting the ARPSYSTEMCOMPONENT property to 1 using the command line or a transform prevents the application from being displayed in the Add or Remove Programs list of Control Panel.
