@@ -15,9 +15,13 @@ On 64-bit Systems
 
 osquery/tables/system/windows/programs.cpp
 
-Hiding Applications
+Hiding Applications [SystemComponent]
 ===================
 * Windows Add & Remove programs will hide applications which has the registry key "SystemComponent" as 1.
 * https://docs.microsoft.com/en-us/windows/win32/msi/arpsystemcomponent?redirectedfrom=MSDN
 * Setting the ARPSYSTEMCOMPONENT property to 1 using the command line or a transform prevents the application from being displayed in the Add or Remove Programs list of Control Panel.
 * https://windowssucks.wordpress.com/win-registry-uninstall-values/
+* https://stackoverflow.com/questions/63076407/sqllocaldb-2019-msi-ignores-arpsystemcomponent-from-wix-bootstrapper
+
+NoRemove/NoModify/NoRepair
+=========================
