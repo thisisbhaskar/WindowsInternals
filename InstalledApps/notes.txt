@@ -22,6 +22,8 @@ Hiding Applications [SystemComponent]
 * Setting the ARPSYSTEMCOMPONENT property to 1 using the command line or a transform prevents the application from being displayed in the Add or Remove Programs list of Control Panel.
 * https://windowssucks.wordpress.com/win-registry-uninstall-values/
 * https://stackoverflow.com/questions/63076407/sqllocaldb-2019-msi-ignores-arpsystemcomponent-from-wix-bootstrapper
+* https://flyingselfies.com/other/what-is-arpsystemcomponent/
+* https://accentient.com/blog/msi-installs-without-registering-with-addremove-programs-arp/
 
 NoRemove/NoModify/NoRepair
 =========================
