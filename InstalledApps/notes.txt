@@ -29,3 +29,7 @@ Hiding Applications [SystemComponent]
 
 NoRemove/NoModify/NoRepair
 =========================
+
+Uninstall
+=========
+* https://www.itninja.com/question/add-remove-program-remove-button-command
