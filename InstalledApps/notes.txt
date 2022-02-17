@@ -1,21 +1,56 @@
 * https://social.technet.microsoft.com/Forums/lync/en-US/d913471a-d7fb-448d-869b-da9025dcc943/where-does-addremove-programs-get-its-information-from-in-the-registry?forum=w7itprogeneral
 
-On 32-bit Systems
-=================
+Registry Paths
+==============
 
-"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
-"HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
-
-On 64-bit Systems
-=================
-
+Standard Locations
+------------------
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+ HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
 
-"HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
-"HKEY_USERS\\<All_User_SIDS>\\Software\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+* "HKEY_LOCAL_MACHINE\\Software\\Classes\\Installer\\Products"
+  This key contains Application Name and Version for applications installed with Microsoft Installer.
+  https://github.com/mavenlin/ListPrograms/blob/master/C%2B%2B/ListPrograms/InstalledPrograms.cpp
+  
+If "WindowsInstaller" is not set there or not set to 1, that means its installed with other installer.
+In that case, we don't need to contact "HKEY_LOCAL_MACHINE\\Software\\Classes\\Installer\\Products" for 
+additional data.
 
-osquery/tables/system/windows/programs.cpp
+If "WindowsInstaller" is set to 1, then refer to "HKEY_LOCAL_MACHINE\\Software\\Classes\\Installer\\Products"
+and look for ProductName and ProductIcon to get correct product display name and display icon.
+
+Additional Locations
+--------------------
+"HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Installer\\Products"  << Is this valid??
+
+
+Important Keys
+==============
+DisplayName  [ProductName]
+DisplayIcon  [ProductIcon]
+DisplayVersion
+VersionMajor
+VersionMnor
+InstallLocation
+InstallSource
+Language
+Publisher
+HelpLink
+URLInfoAbout
+URLProductInfo
+HelpTelephone
+Comments
+Contact
+Readme
+UninstallString
+EstimatedSize
+InstallDate
+WindowsInstaller
+SystemComponent
+NoRemove
+NoRepair
+NoModify
 
 Hiding Applications [SystemComponent]
 ===================
@@ -27,10 +62,12 @@ Hiding Applications [SystemComponent]
 * https://flyingselfies.com/other/what-is-arpsystemcomponent/
 * https://accentient.com/blog/msi-installs-without-registering-with-addremove-programs-arp/
 
-NoRemove/NoModify/NoRepair
-=========================
-
-Uninstall
-=========
+Uninstall String
+=================
 * https://www.itninja.com/question/add-remove-program-remove-button-command
 * https://www.itninja.com/question/msi-uninstall-string
+
+Source Code
+===========
+osquery/tables/system/windows/programs.cpp
+https://github.com/mavenlin/ListPrograms/blob/master/C%2B%2B/ListPrograms/InstalledPrograms.cpp
