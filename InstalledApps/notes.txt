@@ -24,7 +24,6 @@ Additional Locations
 --------------------
 "HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Installer\\Products"  << Is this valid??
 
-
 Important Keys
 ==============
 DisplayName  [ProductName]
