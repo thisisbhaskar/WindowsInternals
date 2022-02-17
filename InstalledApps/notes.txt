@@ -7,7 +7,7 @@ Standard Locations
 ------------------
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
 "HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
- HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+"HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
 
 * "HKEY_LOCAL_MACHINE\\Software\\Classes\\Installer\\Products"
   This key contains Application Name and Version for applications installed with Microsoft Installer.
@@ -22,7 +22,9 @@ and look for ProductName and ProductIcon to get correct product display name and
 
 Additional Locations
 --------------------
-"HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Installer\\Products"  << Is this valid??
+"HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Installer\\Products"
+
+* "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData"
 
 Important Keys
 ==============
@@ -55,8 +57,8 @@ NoModify
 
 If the application name is "KB[0-9]{6}$", then its a KB.
 
-Hiding Applications [SystemComponent]
-===================
+Links
+=====
 * Windows Add & Remove programs will hide applications which has the registry key "SystemComponent" as 1.
 * https://docs.microsoft.com/en-us/windows/win32/msi/arpsystemcomponent?redirectedfrom=MSDN
 * Setting the ARPSYSTEMCOMPONENT property to 1 using the command line or a transform prevents the application from being displayed in the Add or Remove Programs list of Control Panel.
@@ -64,9 +66,7 @@ Hiding Applications [SystemComponent]
 * https://stackoverflow.com/questions/63076407/sqllocaldb-2019-msi-ignores-arpsystemcomponent-from-wix-bootstrapper
 * https://flyingselfies.com/other/what-is-arpsystemcomponent/
 * https://accentient.com/blog/msi-installs-without-registering-with-addremove-programs-arp/
-
-Uninstall String
-=================
+* https://www.advancedinstaller.com/msi-registration-productid.html
 * https://www.itninja.com/question/add-remove-program-remove-button-command
 * https://www.itninja.com/question/msi-uninstall-string
 
