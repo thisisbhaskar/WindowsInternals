@@ -46,11 +46,15 @@ Readme
 UninstallString
 EstimatedSize
 InstallDate
+ReleaseType [ "Security Update", "Update Rollup", "Hotfix"]
+ParentKeyName
 WindowsInstaller
 SystemComponent
 NoRemove
 NoRepair
 NoModify
+
+If the application name is "KB[0-9]{6}$", then its a KB.
 
 Hiding Applications [SystemComponent]
 ===================
