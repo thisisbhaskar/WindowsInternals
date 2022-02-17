@@ -33,3 +33,4 @@ NoRemove/NoModify/NoRepair
 Uninstall
 =========
 * https://www.itninja.com/question/add-remove-program-remove-button-command
+* https://www.itninja.com/question/msi-uninstall-string
