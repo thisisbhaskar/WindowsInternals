@@ -28,7 +28,11 @@ Additional Locations
 
 Important Keys
 ==============
-DisplayName  [ProductName]
+* DisplayName  [ProductName]
+  If you have an MSI which has a display name present in the uninstall registry, and a different one in the 
+  Add/Remove Programs -- take note that the display name seen in Add/Remove Programs came from: 
+  "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Products\"
+
 DisplayIcon  [ProductIcon]
 DisplayVersion
 VersionMajor
@@ -66,9 +70,10 @@ Links
 * https://stackoverflow.com/questions/63076407/sqllocaldb-2019-msi-ignores-arpsystemcomponent-from-wix-bootstrapper
 * https://flyingselfies.com/other/what-is-arpsystemcomponent/
 * https://accentient.com/blog/msi-installs-without-registering-with-addremove-programs-arp/
-* https://www.advancedinstaller.com/msi-registration-productid.html
+* https://www.advancedinstaller.com/msi-registration-productid.html  [GOOD]
 * https://www.itninja.com/question/add-remove-program-remove-button-command
 * https://www.itninja.com/question/msi-uninstall-string
+* https://nsis.sourceforge.io/Add_uninstall_information_to_Add/Remove_Programs
 
 Source Code
 ===========
