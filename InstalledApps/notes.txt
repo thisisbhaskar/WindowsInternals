@@ -25,6 +25,7 @@ Additional Locations
 "HKEY_USERS\\<All_User_SIDS>\\Software\\Microsoft\\Installer\\Products"
 
 * "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData"
+* "HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Installer\UserData"
 
 Important Keys
 ==============
