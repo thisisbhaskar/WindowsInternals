@@ -1,5 +1,3 @@
-* https://social.technet.microsoft.com/Forums/lync/en-US/d913471a-d7fb-448d-869b-da9025dcc943/where-does-addremove-programs-get-its-information-from-in-the-registry?forum=w7itprogeneral
-
 Registry Paths
 ==============
 
@@ -75,6 +73,7 @@ Links
 * https://www.itninja.com/question/add-remove-program-remove-button-command
 * https://www.itninja.com/question/msi-uninstall-string
 * https://nsis.sourceforge.io/Add_uninstall_information_to_Add/Remove_Programs
+* https://social.technet.microsoft.com/Forums/lync/en-US/d913471a-d7fb-448d-869b-da9025dcc943/where-does-addremove-programs-get-its-information-from-in-the-registry?forum=w7itprogeneral
 
 Source Code
 ===========
