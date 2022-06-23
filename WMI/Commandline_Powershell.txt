@@ -1,0 +1,5 @@
+https://www.computerhope.com/wmic.htm
+
+wmic os list
+wmic cpu list
+wmic process list
