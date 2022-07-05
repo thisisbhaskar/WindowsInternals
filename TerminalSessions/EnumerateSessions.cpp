@@ -68,6 +68,24 @@ bool EnablePrivilege(wstring const & p_privilege, bool l_enable_privilege /*= TR
     return l_enabled;
 }
 
+std::string getSessionStateString(DWORD p_session_id)
+{
+    switch (p_session_id)
+    {
+    case WTSActive: return "WTSActive";
+    case WTSConnected: return "WTSConnected";
+    case WTSConnectQuery: return "WTSConnectQuery";
+    case WTSShadow: return "WTSShadow";
+    case WTSDisconnected: return "WTSDisconnected";
+    case WTSIdle: return "WTSIdle";
+    case WTSListen: return "WTSListen";
+    case WTSReset: return "WTSReset";
+    case WTSDown: return "WTSDown";
+    case WTSInit: return "WTSInit";
+    }
+    return "Unknown";
+}
+
 int main(int argc, char * argv[])
 {
 
@@ -80,10 +98,9 @@ int main(int argc, char * argv[])
 
     for (DWORD i = 0; i < l_count; i++)
     {
-        wprintf(L"  * SessionID: %d \n      State: %d\n      WinStation: %s\n",
-                l_sessions[i].SessionId,
-                l_sessions[i].State,
-                l_sessions[i].pWinStationName);
+        wprintf(L"  *   SessionID: %d \n", l_sessions[i].SessionId);
+        wprintf(L"      WinStation: %s\n", l_sessions[i].pWinStationName);
+        printf("      State: %s\n", getSessionStateString(l_sessions[i].State).c_str());
 
         WCHAR *l_session_user;
         DWORD l_bytes = 0;
@@ -101,16 +118,6 @@ int main(int argc, char * argv[])
             WTSFreeMemory(l_user_domain);
         }
 
-        /*
-        WCHAR *l_station_name;
-        l_bytes = 0;
-        if (WTSQuerySessionInformation(WTS_CURRENT_SERVER_HANDLE, l_sessions[i].SessionId, WTSWinStationName, &l_station_name, &l_bytes))
-        {
-            wprintf(L"      WinStation: %s\n", l_station_name);
-            WTSFreeMemory(l_station_name);
-        }
-        */
-   
         WCHAR *l_client_name;
         l_bytes = 0;
         if (WTSQuerySessionInformation(WTS_CURRENT_SERVER_HANDLE, l_sessions[i].SessionId, WTSClientName, &l_client_name, &l_bytes))
